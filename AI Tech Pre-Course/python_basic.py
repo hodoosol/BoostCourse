@@ -22,16 +22,16 @@ input	                output
 
 """
 
-# def solution(mylist) :
-#     answer = []
-#     for i in mylist :
-#         answer.append(len(i))
-#     return answer
+def solution(mylist) :
+    answer = []
+    for i in mylist :
+        answer.append(len(i))
+    return answer
 
 
 # 이 코드가 더 파이썬스럽다.
-# def solution_1(mylist) :
-#     return list(map(len, mylist))
+def solution_1(mylist) :
+    return list(map(len, mylist))
 
 
 
@@ -54,12 +54,12 @@ a와 b는 자연수입니다.
 """
 
 # 내 답
-# a, b = map(int, input().split())
-# print(a // b, a % b)
+a, b = map(int, input().split())
+print(a // b, a % b)
 
 # 모범 답안
-# a, b = map(int, input().strip().split(' '))
-# print(*divmod(a, b))
+a, b = map(int, input().strip().split(' '))
+print(*divmod(a, b))
 
 
 
@@ -97,18 +97,18 @@ input	output
 """
 
 # 내 답
-# n, b = map(int, input().split())
-# n = list(str(n))
-# ex = len(n) - 1
-# answer = 0
-# for i in range(ex + 1) :
-#     answer += int(n[i]) * (b ** (ex - i))
-# print(answer)
+n, b = map(int, input().split())
+n = list(str(n))
+ex = len(n) - 1
+answer = 0
+for i in range(ex + 1) :
+    answer += int(n[i]) * (b ** (ex - i))
+print(answer)
 
 # 모범 답안
-# n, b = map(int, input().split())
-# answer = int(str(n), b)
-# print(answer)
+n, b = map(int, input().split())
+answer = int(str(n), b)
+print(answer)
 
 
 
@@ -134,11 +134,11 @@ abc
 """
 
 # 내 답  ==  모범 답안
-# s, n = input().split()
-# n = int(n)
-# print(s.ljust(n))
-# print(s.center(n))
-# print(s.rjust(n))
+s, n = input().split()
+n = int(n)
+print(s.ljust(n))
+print(s.center(n))
+print(s.rjust(n))
 
 
 
@@ -166,19 +166,19 @@ ABCD...(중간생략)..XYZ
 """
 
 # 내 답
-# if int(input()) == 0 :
-#     for i in range(97, 123) :
-#         print(chr(i), end='')
-# else :
-#     for i in range(65, 91) :
-#         print(chr(i), end='')
+if int(input()) == 0 :
+    for i in range(97, 123) :
+        print(chr(i), end='')
+else :
+    for i in range(65, 91) :
+        print(chr(i), end='')
 
 # 모범 답안
-# import string
-# if int(input()) == 0 :
-#     print(string.ascii_lowercase)
-# else :
-#     print(string.ascii_uppercase)
+import string
+if int(input()) == 0 :
+    print(string.ascii_lowercase)
+else :
+    print(string.ascii_uppercase)
 
 
 
