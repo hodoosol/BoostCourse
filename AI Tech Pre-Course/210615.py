@@ -30,3 +30,26 @@ def solution(absolutes, signs):
 
 
 
+
+
+# 프로그래머스 _ 레벨 1 _ 체육복
+def solution(n, lost, reserve) :
+    answer = n - len(lost)                        # 현재 체육복이 있는 학생 수
+    lost = sorted(lost)                           # lost와 reserve 오름차순 정렬하기
+    reserve = sorted(reserve)
+    temp = list(set(lost).intersection(reserve))  # lost와 reserve의 교집합을 temp에 저장
+                                                  # == 체육복을 도난당했지만 여분이 있는 학생
+    for i in temp:
+        lost.remove(i)                            # 그 학생을 lost와 reserve 리스트에서 삭제
+        reserve.remove(i)
+        answer += 1                               # 체육복이 있으므로 answer + 1
+
+    for i in reserve:
+        if i - 1 in lost:                         # 여분이 있는 학생의 앞번호 학생이 도난당했다면
+            answer += 1                           # 체육복을 빌려주고, 리스트에서 삭제
+            lost.remove(i - 1)
+        elif i + 1 in lost:                       # 여분이 있는 학생의 뒷번호 학생이 도난당했다면
+            answer += 1                           # 체육복을 빌려주고, 리스트에서 삭제
+            lost.remove(i + 1)
+
+    return answer                                 # 체육복이 있는 학생 수 반환
